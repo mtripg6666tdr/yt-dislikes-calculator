@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Dislikes Calculator</title>
+    <style>
+      body {
+        width: 100%;
+        margin: 0px;
+      }
+      div.main_content {
+        width: 70%;
+        margin: 0px auto;
+      }
+      p.message {
+        color: red;
+        font-weight: 700;
+      }
+      .hidden {
+        display: none;
+      }
+      footer {
+        text-align: center;
+      }
+      .disclaim {
+        font-size: 80%;
+      }
+      .disclaim p {
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_content">
+      <div class="description">
+        <h1>YouTube Dislikes Calculator</h1>
+        <p>YouTubeで最近表示されなくなった低評価数を、データをもとに計算して推測します</p>
+      </div>
+      <div class="app">
+        <p class="message">${MESSAGE}</p>
+        <p>開始するには、以下にURLを入力して[計算]を押下してください</p>
+        <form action="/" method="post">
+          <input type="url" name="m_url" placeholder="https://www.youtube.com/watch?v=..." size="50" value="${URL}">
+          <input type="hidden" name="sid" value="${SID}">
+          <button type="submit">計算</button>
+        </form>
+      </div>
+      <div class="result ${RESULT}">
+        <p>タイトル: <a href="${URL}" target="_blank">${TITLE}</a></p>
+        <p>アップロード元: ${CHANNEL}</p>
+        <p>高評価数: ${LIKES_COUNT}</p>
+        <p>推定低評価数: ${DISLIKES_COUNT}</p>
+        <p class="hidden">評価レーティング: ${EVAL_RATING}</p>
+        <p>※低評価数はあくまで推定値です</p>
+        <p>※低評価数が1で高評価数が0の場合、低評価数は1よりも大きい可能性があります</p>
+      </div>
+      <div class="disclaim">
+        <p>本データは取得された値、もしくはそれから推定される推定値で、事実と異なる場合があります</p>
+        <p>本ツールを利用したことによって生じた、いかなる損害・トラブル等の責任は負いかねます</p>
+        <p>また、外部ツール・自作ツールなど、ブラウザ以外を用いて不正に利用する行為を禁じます</p>
+      </div>
+    </div>
+    <footer>
+      Copyright &copy; 2016-2021 mtripg6666tdr All Rights Reserved.
+    </footer>
+  </body>
+</html>
